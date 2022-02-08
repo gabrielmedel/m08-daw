@@ -18,3 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/planets', [App\Http\Controllers\PlanetController::class, 'index']);
+
+Route::get('/planets/delete/{id}', [App\Http\Controllers\PlanetController::class, 'delete']);
+
+Route::post('/planets/newPlaneta', [App\Http\Controllers\PlanetController::class, 'add']);
+Route::get('/planets/newPlaneta', [App\Http\Controllers\PlanetController::class, 'formNew']);
