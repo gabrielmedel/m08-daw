@@ -43,6 +43,8 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
   php:
+    ports:
+      - 8000:8000
     build:
       context: ./dockerfiles
       dockerfile: php.dockerfile
