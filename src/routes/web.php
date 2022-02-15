@@ -17,9 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/planets', [App\Http\Controllers\PlanetController::class, 'index']);
+// Pas 2. LListat de tots els planetes
+Route::get('/planets', [App\Http\Controllers\PlanetController::class, 'index'])->name('planets.index');
 
-Route::get('/planets/delete/{id}', [App\Http\Controllers\PlanetController::class, 'delete']);
+// Pas 3. Obtenir dades d'un planeta en concret
+Route::get('/planets/show/{id}', [App\Http\Controllers\PlanetController::class, 'show'])->name('planets.show');
 
-Route::post('/planets/newPlaneta', [App\Http\Controllers\PlanetController::class, 'add']);
-Route::get('/planets/newPlaneta', [App\Http\Controllers\PlanetController::class, 'formNew']);
+Route::get('/planets/create', [App\Http\Controllers\PlanetController::class, 'create'])->name('planets.create');
+
+Route::post('/planets/store', [App\Http\Controllers\PlanetController::class, 'store'])->name('planets.store');
+
+Route::get('/planets/destroy/{id}', [App\Http\Controllers\PlanetController::class, 'destroy'])->name('planets.destroy');
+
+Route::get('/planets/edit/{id}', [App\Http\Controllers\PlanetController::class, 'edit'])->name('planets.edit');
+
+Route::post('/planets/update/{id}', [App\Http\Controllers\PlanetController::class, 'update'])->name('planets.update');

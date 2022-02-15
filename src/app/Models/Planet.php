@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Planet extends Model
 {
     use HasFactory;
-    // afegir per protegir el model d'assignacions massives quan es crea un nou objecte.
+
+    // Camps que es permet passar al mètode create o update en format array .
+
     protected $fillable = [
         'name',
     ];
