@@ -24,6 +24,11 @@ class PlanetController extends Controller
         return view('planets.index', compact('planets'));
     }
 
+    public function getAll()
+    {
+        return Planet::all();
+    }
+
     public function show($id)
     {
         // Obtenim un objecte Planet a partir del seu id

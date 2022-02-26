@@ -1,4 +1,8 @@
-<div>           
+<div>   
+    
+    
+
+    
 	<form action="{{ route('superherois.store') }}" method="POST">
 	    @csrf
 	       
@@ -10,7 +14,11 @@
             <option value="male">Male</option>
             <option value="female">Female</option>
         </select>
-        <select name="planet"></select>
+        <select name="planet">
+            @foreach ($planets as $planet)
+            <option value="{{$planet->id}}">{{$planet->name}}</option>
+            @endforeach
+        </select>
 	            
 	    <input type="submit" value="desar">     
 	   

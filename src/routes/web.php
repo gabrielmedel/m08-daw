@@ -34,7 +34,8 @@ Route::get('/planets/edit/{id}', [App\Http\Controllers\PlanetController::class, 
 Route::post('/planets/update/{id}', [App\Http\Controllers\PlanetController::class, 'update'])->name('planets.update');
 
 //SuperHerois
+Route::get('/superherois', [App\Http\Controllers\SuperHeroisController::class, 'index'])->name('superherois.index');
 
-Route::post('/superherois/store', [App\Http\Controllers\SuperHeroController::class, 'store'])->name('superherois.store');
+Route::get('/superherois/create', [App\Http\Controllers\SuperHeroisController::class, 'create'])->name('superherois.create');
 
-Route::get('/superherois/create', '/superherois/create', [App\Http\Controllers\SuperHeroController::class, 'create'])->name('superherois.create');
+Route::post('/superherois/store', [App\Http\Controllers\SuperHeroisController::class, 'store'])->name('superherois.store');
